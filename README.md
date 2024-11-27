@@ -14,9 +14,6 @@ This project sets up a backup and restore system using Restic and Docker Compose
     - [Run Shell in Restic Container](#run-shell-in-restic-container)
     - [Backup](#backup)
     - [Restore](#restore)
-6. [Volumes](#volumes)
-7. [Notes](#notes)
-8. [Troubleshooting](#troubleshooting)
 
 ---
 
