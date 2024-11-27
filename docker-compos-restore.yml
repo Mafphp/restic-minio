@@ -1,8 +1,8 @@
 version: '3.5'
 services:
-  restic-backup:
+  restic-restore:
     image: restic/restic:latest
-    container_name: restic-backup
+    container_name: restic-restore
     environment:
       - RESTIC_REPOSITORY=${RESTIC_REPOSITORY}
       - RESTIC_PASSWORD=${RESTIC_PASSWORD}
