@@ -9,7 +9,7 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
     volumes:
-      - sm-wp_db_data:/backup/docker/volumes/sm-wp_db_data
+      - external-volume:/backup/docker/volumes/sm-wp_db_data
       - /backup/restore:/backup/restore
     entrypoint: >
       /bin/sh -c "
@@ -19,5 +19,5 @@ services:
     restart: "no"
 
 volumes:
-  sm-wp_db_data:
+  external-volume:
     external: true
