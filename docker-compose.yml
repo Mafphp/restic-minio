@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+  restic-backup:
+    image: restic/restic:latest
+    container_name: restic-backup
+    environment:
+      - RESTIC_REPOSITORY=${RESTIC_REPOSITORY}
+      - RESTIC_PASSWORD=${RESTIC_PASSWORD}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    volumes:
+      - sm-wp_db_data:/backup/docker/volumes/sm-wp_db_data
+      - /backup/restore:/backup/restore
+    entrypoint: >
+      /bin/sh -c "
+      restic snapshots || restic init &&
+      restic backup /backup &&
+      restic forget --keep-daily 7 --keep-weekly 4 --keep-monthly 12 --prune"
+    restart: "no"
+
+volumes:
+  sm-wp_db_data:
+    external: true
