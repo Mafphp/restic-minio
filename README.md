@@ -76,3 +76,10 @@ for old version of docker-compose
 docker-compose run restic-restore restic restore --target /backup/restore
 ```
 
+
+```
+docker compose run restic backup /backup
+docker compose run restic snapshots
+docker compose run restic diff  39a5119c  39229572
+docker compose run restic forget --keep-daily 7 --keep-weekly 4 --keep-monthly 12 --prune
+```
