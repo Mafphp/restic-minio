@@ -12,7 +12,6 @@ This project sets up a backup and restore system using Restic and Docker Compose
 4. [Environment Variables](#environment-variables)
 5. [Usage](#usage)
     - [Run Shell in Restic Container](#run-shell-in-restic-container)
-    - [Shell](#shell)
     - [Backup](#backup)
     - [Restore](#restore)
 6. [Volumes](#volumes)
@@ -55,7 +54,7 @@ AWS_ACCESS_KEY_ID=your-access-key-id
 AWS_SECRET_ACCESS_KEY=your-secret-access-key
 ```
 
-## Shell
+## Run Shell in Restic Container
 ```script
 docker compose run --rm --entrypoint /bin/sh restic-backup
 ```
