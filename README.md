@@ -51,6 +51,12 @@ AWS_ACCESS_KEY_ID=your-access-key-id
 AWS_SECRET_ACCESS_KEY=your-secret-access-key
 ```
 
+initialize
+```script
+docker compose run --rm restic init
+```
+
+
 ## Run Shell in Restic Container
 ```script
 docker compose run --rm --entrypoint /bin/sh restic-backup
@@ -75,7 +81,6 @@ for old version of docker-compose
 ```script
 docker-compose run restic-restore restic restore --target /backup/restore
 ```
-
 
 ```
 docker compose run --rm restic backup /backup
